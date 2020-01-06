@@ -350,7 +350,7 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
         // 禁用scrollView indicator除非用户开始滑动scrollView
         scrollView.showsVerticalScrollIndicator = NO;
         scrollView.scrollEnabled = [self.presentable isPanScrollEnabled];
-        scrollView.scrollIndicatorInsets = [self.presentable scrollIndicatorInsets];
+//        scrollView.scrollIndicatorInsets = [self.presentable scrollIndicatorInsets];
 
         UIEdgeInsets insets1 = scrollView.contentInset;
         CGFloat bottomLayoutOffset = [UIApplication sharedApplication].keyWindow.rootViewController.bottomLayoutGuide.length;
@@ -361,8 +361,8 @@ static NSString *const kScrollViewKVOContentOffsetKey = @"contentOffset";
          */
         if (HW_FLOAT_IS_ZERO(insets1.bottom) || insets1.bottom < bottomLayoutOffset) {
             
-            insets1.bottom = bottomLayoutOffset;
-            scrollView.contentInset = insets1;
+//            insets1.bottom = bottomLayoutOffset;
+//            scrollView.contentInset = insets1;
         }
         
         if (@available(iOS 11.0, *)) {
