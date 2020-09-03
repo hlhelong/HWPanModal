@@ -84,6 +84,9 @@
 	if ([self panScrollable]) {
         UIScrollView *scrollable = [self panScrollable];
 		[scrollable layoutIfNeeded];
+        if (scrollable.contentSize.height <= (scrollable.frame.size.height - self.bottomLayoutOffset)) {
+            scrollable.contentSize = CGSizeMake(scrollable.contentSize.width, scrollable.frame.size.height);
+        }
 		return scrollable.contentSize.height > (scrollable.frame.size.height - self.bottomLayoutOffset);
 	} else {
 		return NO;
